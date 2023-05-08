@@ -147,5 +147,18 @@ namespace final_exam
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 nextForm = new Form1();
+            this.Hide();
+            nextForm.ShowDialog();
+            this.Close();
+        }
     }
 }

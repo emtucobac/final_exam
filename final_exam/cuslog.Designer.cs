@@ -46,6 +46,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.taophieu = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd2)).BeginInit();
             this.khungtaophieu.SuspendLayout();
@@ -230,14 +232,37 @@
             this.taophieu.UseVisualStyleBackColor = true;
             this.taophieu.Click += new System.EventHandler(this.taophieu_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(856, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(59, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "QUIT";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(856, 52);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(59, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "BACK";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // cuslog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 487);
+            this.ClientSize = new System.Drawing.Size(919, 482);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.khungtaophieu);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "cuslog";
             this.Text = "cuslog";
             this.Load += new System.EventHandler(this.cuslog_Load);
@@ -271,5 +296,7 @@
         private Button button1;
         private TextBox user;
         private Label label5;
+        private Button button2;
+        private Button button3;
     }
 }

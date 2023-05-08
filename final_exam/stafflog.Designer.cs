@@ -54,6 +54,8 @@
             this.xem_phieu = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.phieutxt = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.khungtaophieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amounts)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -327,15 +329,38 @@
             this.phieutxt.TabIndex = 2;
             this.phieutxt.SelectedIndexChanged += new System.EventHandler(this.phieutxt_SelectedIndexChanged);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1008, 44);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(59, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "BACK";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1008, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(59, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "QUIT";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // stafflog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 633);
+            this.ClientSize = new System.Drawing.Size(1072, 633);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.xemP);
             this.Controls.Add(this.khungtaophieu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "stafflog";
             this.Text = "stafflog";
             this.Load += new System.EventHandler(this.stafflog_Load);
@@ -381,5 +406,7 @@
         private ComboBox phieutxt;
         private Button xem_phieu;
         private Button xongP;
+        private Button button3;
+        private Button button4;
     }
 }
