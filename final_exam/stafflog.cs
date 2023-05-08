@@ -323,5 +323,15 @@ namespace final_exam
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grd2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

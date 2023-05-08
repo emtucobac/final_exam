@@ -46,16 +46,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.taophieu = new System.Windows.Forms.Button();
-            this.xemphieu = new System.Windows.Forms.GroupBox();
-            this.xem = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.phieudamua = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd2)).BeginInit();
             this.khungtaophieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soluong)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.xemphieu.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -107,9 +102,9 @@
             this.khungtaophieu.Controls.Add(this.label2);
             this.khungtaophieu.Controls.Add(this.label1);
             this.khungtaophieu.Controls.Add(this.producttxt);
-            this.khungtaophieu.Location = new System.Drawing.Point(12, 275);
+            this.khungtaophieu.Location = new System.Drawing.Point(12, 218);
             this.khungtaophieu.Name = "khungtaophieu";
-            this.khungtaophieu.Size = new System.Drawing.Size(474, 200);
+            this.khungtaophieu.Size = new System.Drawing.Size(474, 257);
             this.khungtaophieu.TabIndex = 2;
             this.khungtaophieu.TabStop = false;
             this.khungtaophieu.Text = "Phieu mua hang";
@@ -235,52 +230,11 @@
             this.taophieu.UseVisualStyleBackColor = true;
             this.taophieu.Click += new System.EventHandler(this.taophieu_Click);
             // 
-            // xemphieu
-            // 
-            this.xemphieu.Controls.Add(this.xem);
-            this.xemphieu.Controls.Add(this.label6);
-            this.xemphieu.Controls.Add(this.phieudamua);
-            this.xemphieu.Location = new System.Drawing.Point(12, 218);
-            this.xemphieu.Name = "xemphieu";
-            this.xemphieu.Size = new System.Drawing.Size(468, 51);
-            this.xemphieu.TabIndex = 4;
-            this.xemphieu.TabStop = false;
-            this.xemphieu.Text = "groupBox3";
-            // 
-            // xem
-            // 
-            this.xem.Location = new System.Drawing.Point(348, 16);
-            this.xem.Name = "xem";
-            this.xem.Size = new System.Drawing.Size(103, 24);
-            this.xem.TabIndex = 9;
-            this.xem.Text = "xem";
-            this.xem.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 15);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Chon san pham:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // phieudamua
-            // 
-            this.phieudamua.FormattingEnabled = true;
-            this.phieudamua.Location = new System.Drawing.Point(109, 22);
-            this.phieudamua.Name = "phieudamua";
-            this.phieudamua.Size = new System.Drawing.Size(206, 23);
-            this.phieudamua.TabIndex = 2;
-            this.phieudamua.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // cuslog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 487);
-            this.Controls.Add(this.xemphieu);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.khungtaophieu);
             this.Controls.Add(this.groupBox2);
@@ -294,8 +248,6 @@
             this.khungtaophieu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soluong)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.xemphieu.ResumeLayout(false);
-            this.xemphieu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -319,9 +271,5 @@
         private Button button1;
         private TextBox user;
         private Label label5;
-        private GroupBox xemphieu;
-        private Label label6;
-        private ComboBox phieudamua;
-        private Button xem;
     }
 }

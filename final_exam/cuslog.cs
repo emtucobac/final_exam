@@ -136,26 +136,7 @@ namespace final_exam
             
 
         }
-        public void BindData2()
-        {
 
-            cn.Open();
-            string tensanpham = "select distinct maphieumua from phieumua where tenkhachhang = "+ user.Text + " ";
-            SqlCommand cmd = new SqlCommand(tensanpham, cn);
-            SqlDataAdapter da = new SqlDataAdapter(tensanpham, cn);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            cmd.ExecuteNonQuery();
-
-            phieudamua.DisplayMember = "maphieumua";
-            phieudamua.ValueMember = "maphieumua";
-            phieudamua.DataSource = ds.Tables[0];
-
-
-
-            cn.Close();
-
-        }
 
         private void label6_Click(object sender, EventArgs e)
         {
