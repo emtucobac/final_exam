@@ -238,11 +238,13 @@ namespace final_exam
                             */
                             using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
                             {
+
+
                                 iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(PageSize.A4, 10f, 20f, 20f, 10f);
                                 PdfWriter.GetInstance(pdfDoc, stream);
                                 pdfDoc.Open();
                                 pdfDoc.Add(new Paragraph("Phieu Nhap kho Hang Hoa"));
-                                pdfDoc.Add(new Paragraph("So phieu + " + phieukhoidtxt.Text + ""));
+                                pdfDoc.Add(new Paragraph("So phieu + " + phieutxt.Text + ""));
                                 pdfDoc.Add(new Paragraph("\n"));
                                 pdfDoc.Add(pdfTable);
                                 pdfDoc.Add(new Paragraph("Tong tien chi tra + " + total.Text + ""));
