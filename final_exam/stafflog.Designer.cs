@@ -46,14 +46,21 @@
             this.grd2 = new System.Windows.Forms.DataGridView();
             this.grd1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.xemkho = new System.Windows.Forms.Button();
             this.taophieu = new System.Windows.Forms.Button();
+            this.xemP = new System.Windows.Forms.GroupBox();
+            this.xongP = new System.Windows.Forms.Button();
+            this.xem_phieu = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.phieutxt = new System.Windows.Forms.ComboBox();
             this.khungtaophieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amounts)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.xemP.SuspendLayout();
             this.SuspendLayout();
             // 
             // khungtaophieu
@@ -160,7 +167,7 @@
             this.groupBox2.Controls.Add(this.grd1);
             this.groupBox2.Location = new System.Drawing.Point(29, 208);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(987, 420);
+            this.groupBox2.Size = new System.Drawing.Size(973, 420);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "bang thong tin";
@@ -183,7 +190,7 @@
             // 
             // inphieu
             // 
-            this.inphieu.Location = new System.Drawing.Point(862, 365);
+            this.inphieu.Location = new System.Drawing.Point(843, 367);
             this.inphieu.Name = "inphieu";
             this.inphieu.Size = new System.Drawing.Size(95, 30);
             this.inphieu.TabIndex = 7;
@@ -215,7 +222,7 @@
             this.grd2.Location = new System.Drawing.Point(620, 32);
             this.grd2.Name = "grd2";
             this.grd2.RowTemplate.Height = 25;
-            this.grd2.Size = new System.Drawing.Size(361, 310);
+            this.grd2.Size = new System.Drawing.Size(318, 310);
             this.grd2.TabIndex = 1;
             // 
             // grd1
@@ -229,6 +236,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.xemkho);
             this.groupBox1.Controls.Add(this.taophieu);
             this.groupBox1.Location = new System.Drawing.Point(29, 2);
@@ -237,6 +245,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Staff ";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(39, 138);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(280, 49);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Xem phieu";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // xemkho
             // 
@@ -258,11 +276,62 @@
             this.taophieu.UseVisualStyleBackColor = true;
             this.taophieu.Click += new System.EventHandler(this.taophieu_Click);
             // 
+            // xemP
+            // 
+            this.xemP.Controls.Add(this.xongP);
+            this.xemP.Controls.Add(this.xem_phieu);
+            this.xemP.Controls.Add(this.label7);
+            this.xemP.Controls.Add(this.phieutxt);
+            this.xemP.Location = new System.Drawing.Point(410, 140);
+            this.xemP.Name = "xemP";
+            this.xemP.Size = new System.Drawing.Size(592, 62);
+            this.xemP.TabIndex = 6;
+            this.xemP.TabStop = false;
+            this.xemP.Text = "Xem phieu";
+            // 
+            // xongP
+            // 
+            this.xongP.Location = new System.Drawing.Point(488, 14);
+            this.xongP.Name = "xongP";
+            this.xongP.Size = new System.Drawing.Size(69, 37);
+            this.xongP.TabIndex = 9;
+            this.xongP.Text = "xong";
+            this.xongP.UseVisualStyleBackColor = true;
+            this.xongP.Click += new System.EventHandler(this.xongP_Click);
+            // 
+            // xem_phieu
+            // 
+            this.xem_phieu.Location = new System.Drawing.Point(412, 14);
+            this.xem_phieu.Name = "xem_phieu";
+            this.xem_phieu.Size = new System.Drawing.Size(69, 37);
+            this.xem_phieu.TabIndex = 8;
+            this.xem_phieu.Text = "xem";
+            this.xem_phieu.UseVisualStyleBackColor = true;
+            this.xem_phieu.Click += new System.EventHandler(this.xem_phieu_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 15);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Chon phieu:";
+            // 
+            // phieutxt
+            // 
+            this.phieutxt.FormattingEnabled = true;
+            this.phieutxt.Location = new System.Drawing.Point(94, 22);
+            this.phieutxt.Name = "phieutxt";
+            this.phieutxt.Size = new System.Drawing.Size(290, 23);
+            this.phieutxt.TabIndex = 2;
+            // 
             // stafflog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 633);
+            this.ClientSize = new System.Drawing.Size(1011, 633);
+            this.Controls.Add(this.xemP);
             this.Controls.Add(this.khungtaophieu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -277,6 +346,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.xemP.ResumeLayout(false);
+            this.xemP.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -303,5 +374,11 @@
         private DataGridView grd2;
         private TextBox total;
         private Label label4;
+        private Button button2;
+        private GroupBox xemP;
+        private Label label7;
+        private ComboBox phieutxt;
+        private Button xem_phieu;
+        private Button xongP;
     }
 }

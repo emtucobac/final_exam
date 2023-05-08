@@ -15,6 +15,8 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using Microsoft.VisualBasic;
+using System.Collections.ObjectModel;
 
 namespace final_exam
 {
@@ -56,8 +58,8 @@ namespace final_exam
             phieukhoidtxt.Text = "PN00" + num + "";
             phieukhoidtxt.Enabled = false;
             htPhieu();
-            
 
+            s = 0;
         }
 
         private void done_Click(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace final_exam
 
             grd2.Rows.Add(producttxt.Text, amounts.Text);
 
-            // Chuyển giá trị mới từ string sang int
+            // Chuyển giá trị mới từ string sang int q
             int newQuantity = int.Parse(amounts.Text);
 
             // Lưu giá trị mới vào cơ sở dữ liệu 
@@ -75,8 +77,30 @@ namespace final_exam
            
             cmdUpdate.Parameters.AddWithValue("@newQuantity", newQuantity);
             cmdUpdate.Parameters.AddWithValue("@categoryname", producttxt.Text);
+
+            // Lưu giá trị mới vào cơ sở dữ liệu 
+            /*SqlCommand cmdtbill = new SqlCommand("INSERT INTO bill_xuat VALUES('@billid', '@productname',  @newQuantity);", cn);
+            cmdtbill.Parameters.AddWithValue("@billid", phieukhoidtxt.Text);
+            cmdtbill.Parameters.AddWithValue("@productname", producttxt.Text);
+            cmdtbill.Parameters.AddWithValue("@newQuantity", newQuantity);
+            cmdtbill.ExecuteNonQuery();*/
+
+
+            string s = "insert into bill_xuat values ('" + phieukhoidtxt.Text + "', '" + producttxt.Text + "', " + newQuantity + ")";
+
+            cm = new SqlCommand(s, cn);
+
+            cm.ExecuteNonQuery();
+
             cmdUpdate.ExecuteNonQuery();
-            
+
+
+            // Lấy giá trị hiện tại của Category_price từ cơ sở dữ liệu
+            SqlCommand cmdSelect = new SqlCommand("SELECT Category_Price FROM category WHERE Category_Name = @categoryname", cn);
+            cmdSelect.Parameters.AddWithValue("@categoryname", producttxt.Text);
+            int productprice = (int)cmdSelect.ExecuteScalar();
+            s = s + (productprice * newQuantity);
+            total.Text = s + "$";
 
             kho_reload();
             cn.Close();
@@ -85,7 +109,6 @@ namespace final_exam
 
         public void BindData1()
         {
-
 
             cn.Open();
             string tensanpham = "select Category_Name from category";
@@ -102,7 +125,29 @@ namespace final_exam
             producttxt.Enabled = true;
             cn.Close();
         }
-        public void htPhieu()
+        public void BindData2()
+        {
+
+            cn.Open();
+            string tensanpham = "select distinct billxuat_id from bill_xuat";
+            SqlCommand cmd = new SqlCommand(tensanpham, cn);
+            SqlDataAdapter da = new SqlDataAdapter(tensanpham, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteNonQuery();
+
+            phieutxt.DisplayMember = "billxuat_id";
+            phieutxt.ValueMember = "billxuat_id";
+            phieutxt.DataSource = ds.Tables[0];
+
+
+
+            cn.Close();
+
+        }
+
+
+            public void htPhieu()
         {
             grd2.ColumnCount = 2;
             grd2.Columns[0].Name = "Product Name";
@@ -117,7 +162,6 @@ namespace final_exam
 
             string sql = "initial catalog = final; data source = DESKTOP-EJDOIL8\\SQLEXPRESS; integrated security = true";
             cn = new SqlConnection(sql);
-
             cn.Open();
 
 
@@ -128,6 +172,7 @@ namespace final_exam
             grd1.DataSource = tb;
             khungtaophieu.Enabled = false;
             total.Enabled = false;
+            xemP.Enabled = false;
             cn.Close();
 
         }
@@ -197,9 +242,10 @@ namespace final_exam
                                 PdfWriter.GetInstance(pdfDoc, stream);
                                 pdfDoc.Open();
                                 pdfDoc.Add(new Paragraph("Phieu Nhap kho Hang Hoa"));
-                                pdfDoc.Add(new Paragraph("So phieu + '" + phieukhoidtxt.Text + "'"));
+                                pdfDoc.Add(new Paragraph("So phieu + " + phieukhoidtxt.Text + ""));
                                 pdfDoc.Add(new Paragraph("\n"));
                                 pdfDoc.Add(pdfTable);
+                                pdfDoc.Add(new Paragraph("Tong tien chi tra + " + total.Text + ""));
                                 pdfDoc.Close();
                                 stream.Close();
                             }
@@ -235,6 +281,42 @@ namespace final_exam
 
         private void producttxt_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            xemP.Enabled = true;
+            BindData2();
+        }
+
+        private void xem_phieu_Click(object sender, EventArgs e)
+        {
+            string s = "select product_name,product_quantity from bill_xuat where billxuat_id = '" + phieutxt.Text + "'";
+            data = new SqlDataAdapter(s, cn);
+            tb = new DataTable();
+            data.Fill(tb);
+            grd2.DataSource = tb;
+
+            /*int sum = 0;
+            foreach (DataGridViewRow row in grd2.Rows)
+            {
+                if (row.Cells[1].Value != null)
+                {
+                    int cellValue;
+
+
+                    if (int.TryParse(row.Cells[1].Value.ToString(), out cellValue))
+                    {
+                        sum += cellValue;
+                    }
+                }
+            }
+            total.Text = sum + "$";*/
+        }
+
+        private void xongP_Click(object sender, EventArgs e)
+        {
+            xemP.Enabled = false;
         }
     }
 }

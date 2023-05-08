@@ -16,5 +16,10 @@ namespace final_exam
         {
             InitializeComponent();
         }
+
+        private void cuslog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

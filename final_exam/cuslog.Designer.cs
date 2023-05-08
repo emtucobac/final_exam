@@ -28,63 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.taophieu = new System.Windows.Forms.Button();
-            this.xemkho = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.xemkho);
-            this.groupBox1.Controls.Add(this.taophieu);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 200);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 218);
+            this.groupBox2.Location = new System.Drawing.Point(492, 218);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(987, 420);
+            this.groupBox2.Size = new System.Drawing.Size(507, 398);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
-            // 
-            // taophieu
-            // 
-            this.taophieu.Location = new System.Drawing.Point(37, 33);
-            this.taophieu.Name = "taophieu";
-            this.taophieu.Size = new System.Drawing.Size(280, 49);
-            this.taophieu.TabIndex = 0;
-            this.taophieu.Text = "Tao phieu nhap kho";
-            this.taophieu.UseVisualStyleBackColor = true;
-            // 
-            // xemkho
-            // 
-            this.xemkho.Location = new System.Drawing.Point(37, 98);
-            this.xemkho.Name = "xemkho";
-            this.xemkho.Size = new System.Drawing.Size(280, 49);
-            this.xemkho.TabIndex = 1;
-            this.xemkho.Text = "Xem kho";
-            this.xemkho.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -92,7 +64,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(975, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(496, 329);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox3
@@ -103,29 +75,51 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Location = new System.Drawing.Point(393, 12);
+            this.groupBox3.Location = new System.Drawing.Point(492, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(606, 200);
+            this.groupBox3.Size = new System.Drawing.Size(507, 200);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             // 
-            // comboBox1
+            // label4
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(192, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(390, 23);
-            this.comboBox1.TabIndex = 0;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(369, 370);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Gia tien:";
             // 
-            // label1
+            // textBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Chon san pham:";
+            this.textBox2.Location = new System.Drawing.Point(425, 367);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(67, 23);
+            this.textBox2.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(192, 25);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(206, 23);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(73, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Ma phieu mua hang:";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(192, 91);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(206, 23);
+            this.numericUpDown1.TabIndex = 3;
             // 
             // label2
             // 
@@ -136,41 +130,45 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "So luong:";
             // 
-            // numericUpDown1
+            // label1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(192, 91);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 23);
-            this.numericUpDown1.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(95, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Chon san pham:";
             // 
-            // label3
+            // comboBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ma phieu nhap kho:";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(192, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(206, 23);
+            this.comboBox1.TabIndex = 0;
             // 
-            // textBox1
+            // groupBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(192, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 5;
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(474, 200);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // cuslog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 641);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "cuslog";
             this.Text = "cuslog";
-            this.groupBox1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.cuslog_Load);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -180,10 +178,6 @@
         }
 
         #endregion
-
-        private GroupBox groupBox1;
-        private Button xemkho;
-        private Button taophieu;
         private GroupBox groupBox2;
         private DataGridView dataGridView1;
         private GroupBox groupBox3;
@@ -193,5 +187,8 @@
         private ComboBox comboBox1;
         private TextBox textBox1;
         private Label label3;
+        private Label label4;
+        private TextBox textBox2;
+        private GroupBox groupBox1;
     }
 }
