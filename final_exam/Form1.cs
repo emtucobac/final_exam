@@ -22,7 +22,7 @@ namespace final_exam
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            cuslog nextForm = new cuslog();
+            username nextForm = new username();
             this.Hide();
             nextForm.ShowDialog();
             this.Close();
