@@ -325,6 +325,7 @@
             this.phieutxt.Name = "phieutxt";
             this.phieutxt.Size = new System.Drawing.Size(290, 23);
             this.phieutxt.TabIndex = 2;
+            this.phieutxt.SelectedIndexChanged += new System.EventHandler(this.phieutxt_SelectedIndexChanged);
             // 
             // stafflog
             // 

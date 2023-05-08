@@ -318,5 +318,10 @@ namespace final_exam
         {
             xemP.Enabled = false;
         }
+
+        private void phieutxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
