@@ -114,6 +114,16 @@ namespace final_exam.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logodeptrai_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("logodeptrai-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vecteezy_illustration_of_human_icon_vector_user_symbol_icon_modern_8442086 {
             get {
                 object obj = ResourceManager.GetObject("vecteezy_illustration-of-human-icon-vector-user-symbol-icon-modern_8442086", resourceCulture);
