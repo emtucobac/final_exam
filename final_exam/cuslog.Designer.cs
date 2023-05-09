@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuslog));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.TextBox();
@@ -320,7 +321,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.khungtaophieu);
             this.Controls.Add(this.groupBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MdiChildrenMinimizedAnchorBottom = false;
+            this.MinimizeBox = false;
             this.Name = "cuslog";
             this.Text = "cuslog";
             this.Load += new System.EventHandler(this.cuslog_Load);
