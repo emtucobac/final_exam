@@ -179,6 +179,7 @@ namespace final_exam
             xemphieuxuat.Enabled = false;
             tendaily.Enabled=false;
             cn.Close();
+            inphieu.Enabled = false;
 
         }
 
@@ -248,16 +249,18 @@ namespace final_exam
                                 iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(PageSize.A4, 10f, 20f, 20f, 10f);
                                 PdfWriter.GetInstance(pdfDoc, stream);
                                 pdfDoc.Open();
-                                pdfDoc.Add(new Paragraph("Phieu Nhap kho Hang Hoa"));
-                                pdfDoc.Add(new Paragraph("So phieu + " + phieutxt.Text + ""));
+                                pdfDoc.Add(new Paragraph("Phieu xuat kho"));
+                                pdfDoc.Add(new Paragraph("So phieu: " + phieuxuattxt.Text + ""));
+                                pdfDoc.Add(new Paragraph("Ten Dai ly: " + tendaily.Text + ""));
                                 pdfDoc.Add(new Paragraph("\n"));
                                 pdfDoc.Add(pdfTable);
-                                pdfDoc.Add(new Paragraph("Tong tien chi tra + " + total.Text + ""));
+                                pdfDoc.Add(new Paragraph("Tong tien chi tra: " + total.Text + ""));
                                 pdfDoc.Close();
                                 stream.Close();
                             }
 
                             MessageBox.Show("Data Exported Successfully !!!", "Info");
+                            inphieu.Enabled = false;
                             // Application.Run(sfd.FileName);
                         }
                         catch (Exception ex)
@@ -348,6 +351,7 @@ namespace final_exam
             xemphieuxuat.Enabled = true;
             BindData3();
             chucnangbox.Enabled = false;
+            inphieu.Enabled= true;
         }
         public void BindData3()
         {

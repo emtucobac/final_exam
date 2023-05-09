@@ -219,6 +219,7 @@
             // 
             // inphieu
             // 
+            this.inphieu.AllowDrop = true;
             this.inphieu.Location = new System.Drawing.Point(843, 339);
             this.inphieu.Name = "inphieu";
             this.inphieu.Size = new System.Drawing.Size(95, 30);
