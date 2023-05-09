@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.producttxt = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tendaily = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.inphieu = new System.Windows.Forms.Button();
@@ -167,6 +169,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tendaily);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.total);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.inphieu);
@@ -181,9 +185,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "bang thong tin";
             // 
+            // tendaily
+            // 
+            this.tendaily.Location = new System.Drawing.Point(838, 308);
+            this.tendaily.Name = "tendaily";
+            this.tendaily.Size = new System.Drawing.Size(100, 23);
+            this.tendaily.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(772, 311);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 15);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Ten dai ly:";
+            // 
             // total
             // 
-            this.total.Location = new System.Drawing.Point(671, 344);
+            this.total.Location = new System.Drawing.Point(620, 344);
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(109, 23);
             this.total.TabIndex = 9;
@@ -191,7 +211,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(671, 326);
+            this.label4.Location = new System.Drawing.Point(620, 326);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 15);
             this.label4.TabIndex = 8;
@@ -485,5 +505,7 @@
         private Button xemxuat;
         private Label label8;
         private ComboBox phieuxuattxt;
+        private TextBox tendaily;
+        private Label label9;
     }
 }

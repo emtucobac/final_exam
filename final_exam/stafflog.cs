@@ -17,6 +17,7 @@ using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic;
 using System.Collections.ObjectModel;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace final_exam
 {
@@ -176,6 +177,7 @@ namespace final_exam
             total.Enabled = false;
             xemP.Enabled = false;
             xemphieuxuat.Enabled = false;
+            tendaily.Enabled=false;
             cn.Close();
 
         }
@@ -292,7 +294,7 @@ namespace final_exam
         private void button2_Click(object sender, EventArgs e)
         {
             xemP.Enabled = true;
-            
+            BindData2();
             chucnangbox.Enabled = false;
         }
 
@@ -376,11 +378,29 @@ namespace final_exam
 
         private void xemxuat_Click(object sender, EventArgs e)
         {
+            cn.Open();
             string s = "select product_name,product_quantity from phieumua where maphieumua = '" + phieuxuattxt.Text + "'";
             data = new SqlDataAdapter(s, cn);
             tb = new DataTable();
             data.Fill(tb);
             grd2.DataSource = tb;
+
+
+
+            string query = "SELECT tenkhachhang FROM phieumua WHERE maphieumua = '"+ phieuxuattxt.Text + "'";
+            SqlCommand command = new SqlCommand(query, cn);
+            SqlDataReader reader = command.ExecuteReader();
+
+            // Đọc giá trị từ SqlDataReader
+            if (reader.Read())
+            {
+                string value = reader.GetString(0);
+
+                // Đưa giá trị lên TextBox
+                tendaily.Text = value;
+            }
+            reader.Close();
+            cn.Close();
         }
     }
 }
