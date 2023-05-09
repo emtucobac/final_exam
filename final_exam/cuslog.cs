@@ -116,10 +116,10 @@ namespace final_exam
 
 
                 // Lấy giá trị hiện tại của Category_price từ cơ sở dữ liệu
-                SqlCommand tt = new SqlCommand("SELECT Category_Price FROM category WHERE Category_Name = @categoryname", cn);
-                tt.Parameters.AddWithValue("@categoryname", producttxt.Text);
+                SqlCommand st = new SqlCommand("SELECT Category_Price FROM category WHERE Category_Name = @categoryname", cn);
+                st.Parameters.AddWithValue("@categoryname", producttxt.Text);
                 int productprice = (int)cmdSelect.ExecuteScalar();
-                s = s + (productprice * a);
+                s = s + (productprice * int.Parse(soluong.Text));
                 total.Text = s + "$";
 
             }

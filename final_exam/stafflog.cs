@@ -30,6 +30,7 @@ namespace final_exam
         DataTable tb;
         SqlDataReader dr;
         int s = 0;
+        int count = 0;
         public stafflog()
         {
             InitializeComponent();
@@ -60,6 +61,7 @@ namespace final_exam
             htPhieu();
 
             s = 0;
+            chucnangbox.Enabled = false;
         }
 
         private void done_Click(object sender, EventArgs e)
@@ -86,9 +88,9 @@ namespace final_exam
             cmdtbill.ExecuteNonQuery();*/
 
 
-            string s = "insert into bill_xuat values ('" + phieukhoidtxt.Text + "', '" + producttxt.Text + "', " + newQuantity + ")";
+            string sa = "insert into bill_xuat values ('" + phieukhoidtxt.Text + "', '" + producttxt.Text + "', " + newQuantity + ")";
 
-            cm = new SqlCommand(s, cn);
+            cm = new SqlCommand(sa, cn);
 
             cm.ExecuteNonQuery();
 
@@ -173,6 +175,7 @@ namespace final_exam
             khungtaophieu.Enabled = false;
             total.Enabled = false;
             xemP.Enabled = false;
+            xemphieuxuat.Enabled = false;
             cn.Close();
 
         }
@@ -274,6 +277,7 @@ namespace final_exam
             khungtaophieu.Enabled = false;
             grd2.Rows.Clear();
             phieukhoidtxt.Clear();
+            chucnangbox.Enabled = true;
         }
 
         private void phieukhoidtxt_TextChanged(object sender, EventArgs e)
@@ -289,36 +293,24 @@ namespace final_exam
         {
             xemP.Enabled = true;
             BindData2();
+            chucnangbox.Enabled = false;
         }
 
         private void xem_phieu_Click(object sender, EventArgs e)
         {
-            string s = "select product_name,product_quantity from bill_xuat where billxuat_id = '" + phieutxt.Text + "'";
-            data = new SqlDataAdapter(s, cn);
-            tb = new DataTable();
-            data.Fill(tb);
-            grd2.DataSource = tb;
 
-            /*int sum = 0;
-            foreach (DataGridViewRow row in grd2.Rows)
-            {
-                if (row.Cells[1].Value != null)
-                {
-                    int cellValue;
+                string s = "select product_name,product_quantity from bill_xuat where billxuat_id = '" + phieutxt.Text + "'";
+                data = new SqlDataAdapter(s, cn);
+                tb = new DataTable();
+                data.Fill(tb);
+                grd2.DataSource = tb;
 
-
-                    if (int.TryParse(row.Cells[1].Value.ToString(), out cellValue))
-                    {
-                        sum += cellValue;
-                    }
-                }
-            }
-            total.Text = sum + "$";*/
         }
 
         private void xongP_Click(object sender, EventArgs e)
         {
             xemP.Enabled = false;
+            chucnangbox.Enabled = true;
         }
 
         private void phieutxt_SelectedIndexChanged(object sender, EventArgs e)
@@ -347,6 +339,48 @@ namespace final_exam
             this.Hide();
             nextForm.ShowDialog();
             this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            xemphieuxuat.Enabled = true;
+            BindData3();
+            chucnangbox.Enabled = false;
+        }
+        public void BindData3()
+        {
+
+            cn.Open();
+            string tensanpham = "select distinct maphieumua from phieumua";
+            SqlCommand cmd = new SqlCommand(tensanpham, cn);
+            SqlDataAdapter da = new SqlDataAdapter(tensanpham, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteNonQuery();
+
+            phieuxuattxt.DisplayMember = "maphieumua";
+            phieuxuattxt.ValueMember = "maphieumua";
+            phieuxuattxt.DataSource = ds.Tables[0];
+
+
+
+            cn.Close();
+
+        }
+
+        private void xongxuat_Click(object sender, EventArgs e)
+        {
+            xemphieuxuat.Enabled = false;
+            chucnangbox.Enabled = true;
+        }
+
+        private void xemxuat_Click(object sender, EventArgs e)
+        {
+            string s = "select product_name,product_quantity from phieumua where maphieumua = '" + phieuxuattxt.Text + "'";
+            data = new SqlDataAdapter(s, cn);
+            tb = new DataTable();
+            data.Fill(tb);
+            grd2.DataSource = tb;
         }
     }
 }
