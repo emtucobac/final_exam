@@ -292,7 +292,7 @@ namespace final_exam
         private void button2_Click(object sender, EventArgs e)
         {
             xemP.Enabled = true;
-            BindData2();
+            
             chucnangbox.Enabled = false;
         }
 

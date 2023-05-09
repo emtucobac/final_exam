@@ -45,6 +45,8 @@ namespace final_exam
             user.Enabled = false;
             BindData1();
             s = 0;
+            xemphieuxuat.Enabled = false;
+            BindData2();
         }
         public void BindData1()
         {
@@ -133,10 +135,27 @@ namespace final_exam
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            xemphieuxuat.Enabled = true;
+            BindData2();
 
         }
+        public void BindData2()
+        {
 
+            cn.Open();
+            string tensanpham = "select distinct maphieumua from phieumua where tenkhachhang = '" + user.Text + "'";
+            SqlCommand cmd = new SqlCommand(tensanpham, cn);
+            SqlDataAdapter da = new SqlDataAdapter(tensanpham, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteNonQuery();
+
+            phieuxuattxt.DisplayMember = "maphieumua";
+            phieuxuattxt.ValueMember = "maphieumua";
+            phieuxuattxt.DataSource = ds.Tables[0];
+
+            cn.Close();
+        }
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -159,6 +178,21 @@ namespace final_exam
             this.Hide();
             nextForm.ShowDialog();
             this.Close();
+        }
+
+        private void phieuxuattxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xongxuat_Click(object sender, EventArgs e)
+        {
+            xemphieuxuat.Enabled = false;
         }
     }
 }

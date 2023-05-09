@@ -48,11 +48,17 @@
             this.taophieu = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.xemphieuxuat = new System.Windows.Forms.GroupBox();
+            this.xongxuat = new System.Windows.Forms.Button();
+            this.xemxuat = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.phieuxuattxt = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd2)).BeginInit();
             this.khungtaophieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soluong)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.xemphieuxuat.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -62,7 +68,7 @@
             this.groupBox2.Controls.Add(this.grd2);
             this.groupBox2.Location = new System.Drawing.Point(492, 20);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(358, 455);
+            this.groupBox2.Size = new System.Drawing.Size(358, 393);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Xem phieu";
@@ -70,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 429);
+            this.label4.Location = new System.Drawing.Point(229, 362);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 15);
             this.label4.TabIndex = 7;
@@ -78,7 +84,7 @@
             // 
             // total
             // 
-            this.total.Location = new System.Drawing.Point(285, 426);
+            this.total.Location = new System.Drawing.Point(285, 359);
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(67, 23);
             this.total.TabIndex = 6;
@@ -89,7 +95,7 @@
             this.grd2.Location = new System.Drawing.Point(6, 32);
             this.grd2.Name = "grd2";
             this.grd2.RowTemplate.Height = 25;
-            this.grd2.Size = new System.Drawing.Size(346, 388);
+            this.grd2.Size = new System.Drawing.Size(346, 321);
             this.grd2.TabIndex = 0;
             // 
             // khungtaophieu
@@ -106,7 +112,7 @@
             this.khungtaophieu.Controls.Add(this.producttxt);
             this.khungtaophieu.Location = new System.Drawing.Point(12, 218);
             this.khungtaophieu.Name = "khungtaophieu";
-            this.khungtaophieu.Size = new System.Drawing.Size(474, 257);
+            this.khungtaophieu.Size = new System.Drawing.Size(474, 195);
             this.khungtaophieu.TabIndex = 2;
             this.khungtaophieu.TabStop = false;
             this.khungtaophieu.Text = "Phieu mua hang";
@@ -211,6 +217,7 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chuc nang";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button1
             // 
@@ -252,11 +259,62 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // xemphieuxuat
+            // 
+            this.xemphieuxuat.Controls.Add(this.xongxuat);
+            this.xemphieuxuat.Controls.Add(this.xemxuat);
+            this.xemphieuxuat.Controls.Add(this.label8);
+            this.xemphieuxuat.Controls.Add(this.phieuxuattxt);
+            this.xemphieuxuat.Location = new System.Drawing.Point(12, 419);
+            this.xemphieuxuat.Name = "xemphieuxuat";
+            this.xemphieuxuat.Size = new System.Drawing.Size(589, 56);
+            this.xemphieuxuat.TabIndex = 12;
+            this.xemphieuxuat.TabStop = false;
+            this.xemphieuxuat.Text = "Xem phieu mua hang";
+            // 
+            // xongxuat
+            // 
+            this.xongxuat.Location = new System.Drawing.Point(488, 13);
+            this.xongxuat.Name = "xongxuat";
+            this.xongxuat.Size = new System.Drawing.Size(69, 37);
+            this.xongxuat.TabIndex = 9;
+            this.xongxuat.Text = "xong";
+            this.xongxuat.UseVisualStyleBackColor = true;
+            this.xongxuat.Click += new System.EventHandler(this.xongxuat_Click);
+            // 
+            // xemxuat
+            // 
+            this.xemxuat.Location = new System.Drawing.Point(413, 13);
+            this.xemxuat.Name = "xemxuat";
+            this.xemxuat.Size = new System.Drawing.Size(69, 37);
+            this.xemxuat.TabIndex = 8;
+            this.xemxuat.Text = "xem";
+            this.xemxuat.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 15);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Chon phieu:";
+            // 
+            // phieuxuattxt
+            // 
+            this.phieuxuattxt.FormattingEnabled = true;
+            this.phieuxuattxt.Location = new System.Drawing.Point(94, 22);
+            this.phieuxuattxt.Name = "phieuxuattxt";
+            this.phieuxuattxt.Size = new System.Drawing.Size(290, 23);
+            this.phieuxuattxt.TabIndex = 2;
+            this.phieuxuattxt.SelectedIndexChanged += new System.EventHandler(this.phieuxuattxt_SelectedIndexChanged);
+            // 
             // cuslog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 482);
+            this.Controls.Add(this.xemphieuxuat);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
@@ -273,6 +331,8 @@
             this.khungtaophieu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soluong)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.xemphieuxuat.ResumeLayout(false);
+            this.xemphieuxuat.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -298,5 +358,10 @@
         private Label label5;
         private Button button2;
         private Button button3;
+        private GroupBox xemphieuxuat;
+        private Button xongxuat;
+        private Button xemxuat;
+        private Label label8;
+        private ComboBox phieuxuattxt;
     }
 }
